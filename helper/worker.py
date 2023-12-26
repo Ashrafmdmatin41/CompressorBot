@@ -145,8 +145,8 @@ async def sample(e):
     xxx = await e.edit(
         "`Generating Sample...`",
         buttons=[
-            [Button.inline("STATS", data=f"stats{wah}")],
-            [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
+            [Button.inline("📊 Sᴛᴀᴛs", data=f"stats{wah}")],
+            [Button.inline("❌ Cᴀɴᴄᴇʟ Pʀᴏɢʀᴇss", data=f"skip{wah}")],
         ],
     )
     ncmd = f'ffmpeg -i "{dl}" -preset ultrafast -ss {ss} -to {dd} -c:v libx265 -crf 27 -map 0:v -c:a aac -map 0:a -c:s copy -map 0:s? "{out}" -y'
@@ -157,7 +157,7 @@ async def sample(e):
     er = stderr.decode()
     try:
         if er:
-            await e.edit(str(er) + "\n\n**ERROR** Contact @danish_00")
+            await e.edit(str(er) + "\n\n**ERROR** Contact @Md_Matin_Ashraf")
             COUNT.remove(e.chat_id)
             os.remove(dl)
             os.remove(out)
@@ -177,10 +177,10 @@ async def sample(e):
             ),
             buttons=[
                 [
-                    Button.inline("SCREENSHOTS", data=f"sshot{wah}"),
-                    Button.inline("COMPRESS", data=f"sencc{wah}"),
+                    Button.inline("🖼 Screenshots", data=f"sshot{wah}"),
+                    Button.inline("🗜 Cᴏᴍᴘʀᴇss", data=f"sencc{wah}"),
                 ],
-                [Button.inline("SKIP", data=f"skip{wah}")],
+                [Button.inline("♦ Sᴋɪᴘ", data=f"skip{wah}")],
             ],
         )
         COUNT.remove(e.chat_id)
@@ -219,12 +219,12 @@ async def encod(event):
         # if (user.id) not in pp:
         #    return await xxx.edit(
         #        "U Must Subscribe This Channel To Use This Bot",
-        #       buttons=[Button.url("JOIN CHANNEL", url="put group link")],
+        #       buttons=[Button.url("♨️ Jᴏɪɴ Cʜᴀɴɴᴇʟ", url="put group link")],
         #   )
         if len(COUNT) > 4 and user.id != OWNER:
             llink = (await event.client(cl(LOG))).link
             return await xxx.edit(
-                "Overload Already 5 Process Running",
+                "Overload Already 50 Process Running",
                 buttons=[Button.url("Working Status", url=llink)],
             )
         if user.id in COUNT and user.id != OWNER:
@@ -300,11 +300,11 @@ async def encod(event):
             f"🐠DOWNLODING COMPLETED!!🐠",
             buttons=[
                 [
-                    Button.inline("GENERATE SAMPLE", data=f"gsmpl{key}"),
-                    Button.inline("SCREENSHOTS", data=f"sshot{key}"),
+                    Button.inline("📽 Gᴇɴᴇʀᴀᴛᴇ Sᴀᴍᴘʟᴇ", data=f"gsmpl{key}"),
+                    Button.inline("🖼 Screenshots", data=f"sshot{key}"),
                 ],
-                [Button.url("MEDIAINFO", url=inf)],
-                [Button.inline("COMPRESS", data=f"sencc{key}")],
+                [Button.url("📜 MᴇᴅɪᴀIɴғᴏ", url=inf)],
+                [Button.inline("🗜 Cᴏᴍᴘʀᴇss", data=f"sencc{key}")],
             ],
         )
     except BaseException as er:
@@ -321,8 +321,8 @@ async def customenc(e, key):
     nn = await e.edit(
         "`Compressing..`",
         buttons=[
-            [Button.inline("STATS", data=f"stats{wah}")],
-            [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
+            [Button.inline("📊 Sᴛᴀᴛs", data=f"stats{wah}")],
+            [Button.inline("❌ Cᴀɴᴄᴇʟ Pʀᴏɢʀᴇss", data=f"skip{wah}")],
         ],
     )
     cmd = f'ffmpeg -i "{dl}" -preset ultrafast -c:v libx265 -crf 27 -map 0:v -c:a aac -map 0:a -c:s copy -map 0:s? "{out}" -y'
@@ -333,7 +333,7 @@ async def customenc(e, key):
     er = stderr.decode()
     try:
         if er:
-            await e.edit(str(er) + "\n\n**ERROR** Contact @danish_00")
+            await e.edit(str(er) + "\n\n**ERROR** Contact @Md_Matin_Ashraf")
             COUNT.remove(e.chat_id)
             os.remove(dl)
             return os.remove(out)
@@ -376,7 +376,7 @@ async def customenc(e, key):
     a1 = await info(dl, e)
     a2 = await info(out, e)
     dk = await ds.reply(
-        f"Original Size : {hbs(org)}\nCompressed Size : {hbs(com)}\nCompressed Percentage : {per}\n\nMediainfo: [Before]({a1})//[After]({a2})\n\nDownloaded in {x}\nCompressed in {xx}\nUploaded in {xxx}",
+        f"Original Size : {hbs(org)}\n► Compressed Size : {hbs(com)}\n► Compressed Percentage : {per}\n\n☞ Mediainfo: [Before]({a1})//[After]({a2})\n\n► Downloaded in {x}\n► Compressed in {xx}\n► Uploaded in {xxx}",
         link_preview=False,
     )
     await ds.forward_to(LOG)
