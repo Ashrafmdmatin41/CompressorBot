@@ -35,13 +35,13 @@ async def screenshot(e):
         await e.client.send_file(e.chat_id, pic)
         await e.client.send_message(
             e.chat_id,
-            "Check Screenshots Above 😁",
+            "Check Screenshots Above 😁 \nDo Me More Task Or Click On Skip Button",
             buttons=[
                 [
-                    Button.inline("GENERATE SAMPLE", data=f"gsmpl{wah}"),
-                    Button.inline("COMPRESS", data=f"sencc{wah}"),
+                    Button.inline("📽 Gᴇɴᴇʀᴀᴛᴇ Sᴀᴍᴘʟᴇ", data=f"gsmpl{wah}"),
+                    Button.inline("🗜 Cᴏᴍᴘʀᴇss", data=f"sencc{wah}"),
                 ],
-                [Button.inline("SKIP", data=f"skip{wah}")],
+                [Button.inline("♦ Sᴋɪᴘ", data=f"skip{wah}")],
             ],
         )
         COUNT.remove(e.chat_id)
@@ -75,8 +75,8 @@ async def encc(e):
         nn = await e.edit(
             "`Compressing..`",
             buttons=[
-                [Button.inline("STATS", data=f"stats{wah}")],
-                [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
+                [Button.inline("📊 Sᴛᴀᴛs", data=f"stats{wah}")],
+                [Button.inline("❌ Cᴀɴᴄᴇʟ Pʀᴏɢʀᴇss", data=f"skip{wah}")],
             ],
         )
         cmd = f'ffmpeg -i "{dl}" -preset ultrafast -c:v libx265 -crf 27 -map 0:v -c:a aac -map 0:a -c:s copy -map 0:s? "{out}" -y'
@@ -87,7 +87,7 @@ async def encc(e):
         er = stderr.decode()
         try:
             if er:
-                await e.edit(str(er) + "\n\n**ERROR** Contact @danish_00")
+                await e.edit(str(er) + "\n\n**ERROR** Contact @Md_Matin_Ashraf")
                 COUNT.remove(e.chat_id)
                 os.remove(dl)
                 return os.remove(out)
@@ -123,7 +123,7 @@ async def encc(e):
         a1 = await info(dl, e)
         a2 = await info(out, e)
         dk = await ds.reply(
-            f"Original Size : {hbs(org)}\nCompressed Size : {hbs(com)}\nCompressed Percentage : {per}\n\nMediainfo: [Before]({a1})//[After]({a2})\n\nDownloaded in {x}\nCompressed in {xx}\nUploaded in {xxx}",
+            f"► Original Size : {hbs(org)}\n► Compressed Size : {hbs(com)}\n► Compressed Percentage : {per}\n\n☞ Mediainfo: [Before]({a1})//[After]({a2})\n\n► Downloaded in {x}\n► Compressed in {xx}\n► Uploaded in {xxx}",
             link_preview=False,
         )
         await ds.forward_to(LOG)
