@@ -29,12 +29,12 @@ async def up(event):
 async def start(event):
     ok = await event.client(GetFullUserRequest(event.sender_id))
     await event.reply(
-        f"Hi `{ok.user.first_name}`\nThis is A CompressorBot Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change\nU can Generate Samples/screenshots too.",
+        f"Hi `{user.first_name}`\nThis is A CompressorBot Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change\nU can Generate Samples/screenshots too.",
         buttons=[
-            [Button.inline("HELP", data="ihelp")],
+            [Button.inline("🦋 Hᴇʟᴘ", data="ihelp")],
             [
-                Button.url("SOURCE CODE", url="github.com/1Danish-00/CompressorBot"),
-                Button.url("DEVELOPER", url="t.me/danish_00"),
+                Button.url("👩‍💻 Dᴇᴠᴇʟᴏᴘᴇʀ", url="t.me/Md_Matin_Ashraf"),
+                Button.url("📡 Leech Group", url="t.me/Matiz_Techz/156"),
             ],
         ],
     )
@@ -49,19 +49,19 @@ async def help(event):
 async def ihelp(event):
     await event.edit(
         "**🐠 A Quality CompressorBot**\n\n+This Bot Compress Videos With Negligible Quality Change.\n+Generate Sample Compressed Video\n+Screenshots Too\n+Easy to Use\n-Due to Quality Settings Bot Takes Time To Compress.\nSo Be patience Nd Send videos One By One After Completing.\nDont Spam Bot.\n\nJust Forward Video To Get Options",
-        buttons=[Button.inline("BACK", data="beck")],
+        buttons=[Button.inline("»»Bᴀᴄᴋ««", data="beck")],
     )
 
 
 async def beck(event):
     ok = await event.client(GetFullUserRequest(event.sender_id))
     await event.edit(
-        f"Hi `{ok.user.first_name}`\nThis is A CompressorBot Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change\nU can Generate Samples/screenshots too.",
+        f"Hi `{user.first_name}`\nThis is A CompressorBot Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change\nU can Generate Samples/screenshots too.",
         buttons=[
-            [Button.inline("HELP", data="ihelp")],
+            [Button.inline("🦋 Hᴇʟᴘ", data="ihelp")],
             [
-                Button.url("SOURCE CODE", url="github.com/1Danish-00/"),
-                Button.url("DEVELOPER", url="t.me/danish_00"),
+                Button.url("👩‍💻 Dᴇᴠᴇʟᴏᴘᴇʀ", url="t.me/Md_Matin_Ashraf"),
+                Button.url("📡 Leech Group", url="t.me/Matiz_Techz/156"),
             ],
         ],
     )
@@ -70,13 +70,13 @@ async def beck(event):
 async def sencc(e):
     key = e.pattern_match.group(1).decode("UTF-8")
     await e.edit(
-        "Choose Mode",
+        "• Choose Mode Baby 😅\n➔ Default For Compress Direct\n➔ Custom Compress Means, You Set Add Custom File Name And Custom Thumbnail",
         buttons=[
             [
                 Button.inline("Default Compress", data=f"encc{key}"),
                 Button.inline("Custom Compress", data=f"ccom{key}"),
             ],
-            [Button.inline("Back", data=f"back{key}")],
+            [Button.inline("»»Bᴀᴄᴋ««", data=f"back{key}")],
         ],
     )
 
@@ -87,10 +87,10 @@ async def back(e):
         "🐠  **What To Do** 🐠",
         buttons=[
             [
-                Button.inline("GENERATE SAMPLE", data=f"gsmpl{key}"),
-                Button.inline("SCREENSHOTS", data=f"sshot{key}"),
+                Button.inline("📽 Gᴇɴᴇʀᴀᴛᴇ Sᴀᴍᴘʟᴇ", data=f"gsmpl{key}"),
+                Button.inline("🖼 Screenshots", data=f"sshot{key}"),
             ],
-            [Button.inline("COMPRESS", data=f"sencc{key}")],
+            [Button.inline("🗜 Cᴏᴍᴘʀᴇss", data=f"sencc{key}")],
         ],
     )
 
@@ -111,7 +111,7 @@ async def ccom(e):
             g = repl.text + ".mkv"
         outt = f"encode/{chat}/{g}"
         x = await repl.reply(
-            f"Custom File Name : {g}\n\nSend Thumbnail Picture For it."
+            f"Custom File Name : {g}\n\nNow Send Thumbnail Picture For it."
         )
         replyy = cv.wait_event(events.NewMessage(from_users=chat))
         rep = await replyy
@@ -123,7 +123,7 @@ async def ccom(e):
             tb = url.replace("https://telegra.ph/file/", "")
         else:
             tb = thum
-        omk = await rep.reply(f"Thumbnail {tb} Setted Successfully")
+        omk = await rep.reply(f"Thumbnail {tb} Setted Successfully ✅")
         hehe = f"{outt};{dl};{tb};{dtime}"
         key = code(hehe)
         await customenc(omk, key)
