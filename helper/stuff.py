@@ -29,7 +29,7 @@ async def up(event):
 async def start(event):
     ok = await event.client(GetFullUserRequest(event.sender_id))
     await event.reply(
-        f"Hi `{event.sender.first_name}`\nThis is A CompressorBot Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change\nU can Generate Samples/screenshots too/n/n ♥ Bot By:- @Matiz_Techz",
+        f"Hi `{event.sender.first_name}`\nThis is A CompressorBot Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change\nU can Generate Samples/screenshots too.\n\n ♥ Bot By:- @Matiz_Techz",
         buttons=[
             [Button.inline("🦋 Hᴇʟᴘ", data="ihelp")],
             [
@@ -56,7 +56,7 @@ async def ihelp(event):
 async def beck(event):
     ok = await event.client(GetFullUserRequest(event.sender_id))
     await event.edit(
-        f"Hi `{event.sender.first_name}`\nThis is A CompressorBot Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change\nU can Generate Samples/screenshots too/n/n ♥ Bot By:- @Matiz_Techz",
+        f"Hi `{event.sender.first_name}`\nThis is A CompressorBot Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change\nU can Generate Samples/screenshots too\n\n ♥ Bot By:- @Matiz_Techz",
         buttons=[
             [Button.inline("🦋 Hᴇʟᴘ", data="ihelp")],
             [
@@ -70,7 +70,7 @@ async def beck(event):
 async def sencc(e):
     key = e.pattern_match.group(1).decode("UTF-8")
     await e.edit(
-        "• Choose Mode Baby 😅\n➔ Default For Compress Direct\n➔ Custom Compress Means, You Set Add Custom File Name And Custom Thumbnail",
+        "⁉️ Choose Mode Baby 😅\n\n➔ Default For Compress Direct\n➔ Custom Compress Means, You Set Add Custom File Name And Custom Thumbnail",
         buttons=[
             [
                 Button.inline("Default Compress", data=f"encc{key}"),
